@@ -334,8 +334,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parsingCodes:
-  - '&like &banana[s]'
-  - '&prefer  &strawberr[y/ies]'
+  - _code: '&like &banana[s]'
+    _prioroty: 0
+    _words: []
+    _ends:
+    - s
+  - _code: 
+    _prioroty: 0
+    _words: []
+    _ends: []
 --- !u!4 &2029414402
 Transform:
   m_ObjectHideFlags: 0

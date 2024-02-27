@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 [CustomEditor(typeof(SentenceParsing))]
@@ -19,55 +20,20 @@ public class SentenceParserEditor : Editor
 
         if (GUILayout.Button("Parse Sentence"))
         {
-            ParseSentence();
+            ParseSentence(sentenceToParse);
         }
     }
-
-// Method to parse the sentence
-    public void ParseSentence()
+    
+    public void ParseSentence(string sentence)
     {
-        bool isSentenceValid = false;
+        ParsingCodeChecker checker = new ParsingCodeChecker(_sentenceParsing.parsingCodes.ToList());
 
-        foreach (string code in _sentenceParsing.parsingCodes)
-        {
-            if (IsSentenceValidForParsingCode(sentenceToParse, code))
-            {
-                Debug.Log("The sentence matches parsing code: " + code);
-                isSentenceValid = true;
-            }
-        }
-
-        if (!isSentenceValid)
-        {
-            Debug.Log("The sentence does not match any parsing code.");
-        }
-    }
-
-    // Method to check if the sentence matches the parsing code
-    private bool IsSentenceValidForParsingCode(string sentence, string parsingCode)
-    {
-        string[] codeWords = parsingCode.Split(' ');
-
-        foreach (string word in codeWords)
-        {
-            string modifiedWord = word.Trim('&');
-
-            if (sentence.ToLower().Contains(modifiedWord.ToLower()) == false)
-            {
-                if (word.Contains("[s]") == false)
-                {
-                    return false;
-                }
-
-                string singularForm = modifiedWord.Remove(modifiedWord.Length - 3);
-                if (sentence.ToLower().Contains(singularForm.ToLower()) == false)
-                {
-                    return false;
-                }
-            }
-        }
-
-        return true;
-
+        string[] sentences = {
+            "I like bananas, but I prefer strawberries!",
+            "I like bananas and apples.",
+            "I don't like bananas, but I prefer strawberries!"
+        };
+       string result = checker.CheckSentence(sentence);
+        Debug.Log($"Sentence: \"{sentence}\" - Parsing code: \"{result}\"");
     }
 }
