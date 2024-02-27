@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 [CustomEditor(typeof(SentenceParsing))]
@@ -20,20 +19,7 @@ public class SentenceParserEditor : Editor
 
         if (GUILayout.Button("Parse Sentence"))
         {
-            ParseSentence(sentenceToParse);
+            _sentenceParsing.ParseSentence(sentenceToParse);
         }
-    }
-    
-    public void ParseSentence(string sentence)
-    {
-        ParsingCodeChecker checker = new ParsingCodeChecker(_sentenceParsing.parsingCodes.ToList());
-
-        string[] sentences = {
-            "I like bananas, but I prefer strawberries!",
-            "I like bananas and apples.",
-            "I don't like bananas, but I prefer strawberries!"
-        };
-       string result = checker.CheckSentence(sentence);
-        Debug.Log($"Sentence: \"{sentence}\" - Parsing code: \"{result}\"");
     }
 }

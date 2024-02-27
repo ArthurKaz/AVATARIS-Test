@@ -1,16 +1,27 @@
-using System.Linq;
+using System;
 using UnityEngine;
 
-public class SentenceParsing : MonoBehaviour
+public class SentenceParsing : MonoBehaviour, IParser
 {
-    [SerializeField] public ParsingCode[] parsingCodes;
+/*
+ &like &banana[s]
+ &prefer &strawberr[y/ies]
+
+"I like bananas, but I prefer strawberries!",
+"I like bananas and apples.",
+"I don't like bananas, but I prefer strawberries!"
+*/
+    [SerializeField] public ParsingCodeChecker _parsingCodeChecker;
+
+    public string ParseSentence(string sentence)
+    {
+        string result = _parsingCodeChecker.GetMatchedParseCodeWithPriority(sentence);
+        
+        return result;
+    }
 
     private void OnValidate()
     {
-        parsingCodes = parsingCodes.OrderByDescending(code => code.Priority).ToArray();
-        foreach (var parsingCode in parsingCodes)
-        {
-            parsingCode.GetWords();
-        }
+        _parsingCodeChecker.OrderByPriority();
     }
 }
