@@ -11,7 +11,7 @@ public class ParsingCodeChecker
     
     public string GetMatchedParseCodeWithPriority(string sentence)
     {
-        string matched = "Nothing";
+        string matched = "None";
         int highestPriority = int.MaxValue;
 
         foreach (var parsingCode in GetOrderedByPriority())

@@ -1,15 +1,16 @@
-using System;
 using UnityEngine;
 
 public class SentenceParsing : MonoBehaviour, IParser
 {
 /*
- &like &banana[s]
- &prefer &strawberr[y/ies]
+&like &banana[s]
+&prefer &strawberr[y/ies]
+&enjoy[s] &apple[s/]
+&eat[s] &orange[s/]
 
-"I like bananas, but I prefer strawberries!",
-"I like bananas and apples.",
-"I don't like bananas, but I prefer strawberries!"
+I like bananas, but I prefer strawberries!,
+She enjoys eating apples and oranges.
+He dislikes grapes, but he loves watermelon!
 */
     [SerializeField] public ParsingCodeChecker _parsingCodeChecker;
 
