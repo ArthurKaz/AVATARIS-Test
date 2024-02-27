@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-[Serializable]
-public class ParsingCodeChecker
+[CreateAssetMenu(fileName = "new Parsing Codes", menuName = "Parsing/ParsingCodeChecker", order = 1)]
+public class ParsingCodeChecker : ScriptableObject
 {
     [SerializeField] private List<ParsingCode> _parsingCodes;
     

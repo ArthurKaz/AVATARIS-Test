@@ -10,7 +10,6 @@ public class SentenceParsing : MonoBehaviour, IParser
 
 I like bananas, but I prefer strawberries!,
 She enjoys apples and eats oranges.
-He dislikes grapes, but he loves watermelon!
 */
     [SerializeField] public ParsingCodeChecker _parsingCodeChecker;
 
