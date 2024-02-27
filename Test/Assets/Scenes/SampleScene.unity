@@ -1426,13 +1426,13 @@ MonoBehaviour:
     _parsingCodes:
     - _code: '&prefer &strawberr[y/ies]'
       _prioroty: 1
-    - _code: '&enjoy[s] &apple[s/]'
-      _prioroty: 1
     - _code: '&love[s] &watermelon[s/]'
+      _prioroty: 1
+    - _code: '&enjoy[s] &apple[s/]'
       _prioroty: 1
     - _code: '&like &banana[s]'
       _prioroty: 2
-    - _code: '&eat[s] &orange[s/]'
+    - _code: '&eat[s/ing] &orange[s/]'
       _prioroty: 2
     - _code: '&dislike[s] &grape[s/]'
       _prioroty: 2
