@@ -19,7 +19,9 @@ public class SentenceParserEditor : Editor
 
         if (GUILayout.Button("Parse Sentence"))
         {
-            _sentenceParsing.ParseSentence(sentenceToParse);
+            var sentence = sentenceToParse;
+            var result = _sentenceParsing.ParseSentence(sentence);
+            Debug.Log($"Sentence: \"{sentence}\" - Parsing code: \"{result}\"");
         }
     }
 }
