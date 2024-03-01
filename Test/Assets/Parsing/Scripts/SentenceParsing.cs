@@ -8,7 +8,7 @@ public class SentenceParsing : MonoBehaviour, IParser
 &enjoy[s] &apple[s/]
 &eat[s] &orange[s/]
 
-I like bananas, but I prefer strawberries!,
+I like bananas, but I prefer strawberries!
 She enjoys apples and eats oranges.
 */
     [SerializeField] public ParsingCodeChecker _parsingCodeChecker;

@@ -10,6 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d080180cfebd480696937521643b2f2c, type: 3}
-  m_Name: OtherParsing
+  m_Name: new Parsing Codes
   m_EditorClassIdentifier: 
-  _parsingCodes: []
+  _parsingCodes:
+  - _code: '&prefer &strawberr[y/ies]'
+    _prioroty: 0
+  - _code: '&enjoy[s] &apple[s/]'
+    _prioroty: 0
+  - _code: '&eat[s] &orange[s/]'
+    _prioroty: 1
+  - _code: '&like &banana[s]'
+    _prioroty: 1
